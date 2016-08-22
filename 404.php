@@ -9,56 +9,33 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <section class="feature-image-default-alt" data-type="background" data-speed="2">
+		<h1 class="page-title">Bummer! That page can't be found</h1>
+	</section>	
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'lees_art' ); ?></h1>
-				</header><!-- .page-header -->
+    <div class="container">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'lees_art' ); ?></p>
+		<div id="primary" class ="row">
 
-					<?php
-						get_search_form();
+			<main id="content" class="col-sm-8">
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+				<div class="error-404 not-found">
 
-						// Only show the widget if site has multiple categories.
-						if ( lees_art_categorized_blog() ) :
-					?>
+					<div class="page-content">
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'lees_art' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+						<h2>Don't worry man!  Lets get you back on track.</h2>
 
-					<?php
-						endif;
+						
+						
+						<p>Just click on a menu item in the above navigation section in the top right, to go back home or to another page like the gallery</p>
+					</div><!-- .page-content -->
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'lees_art' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+				</div><!-- .error-404 -->
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+			</main><!-- #content -->
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+		</div><!-- # primary -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- container -->
 
-<?php
-get_footer();
+<?php get_footer(); ?>

@@ -19,8 +19,6 @@ get_header(); ?>
                 <div class='row'>
                         <div class="col-md-6 feature">
 
-                            <?php $image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-
                             <img src="<?php echo $lee_painting_image[url]; ?>" class="img-responsive" id="my-story-photo" alt="<?php echo $lee_painting_image[alt]; ?>"/>
                         </div>
                         <div class="col-md-6 feature">

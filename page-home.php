@@ -59,8 +59,10 @@ get_header(); ?>
 
                     <?php  /* get information about each image for display in slide show */  
                          $attachment_meta = wp_get_attachment($id);
+                         /* get page where photo is displayed in full and use it link from thumbnail in gallery */
+                         $page = get_page_by_title( $attachment_meta['title'] );
                      ?>    
-                            <a href="<?echo $attachment_meta['href'];?>">
+                            <a href="<?php echo get_page_link($page->ID); ?>">
                                 <img class="img-responsive picture-gallery" src="<?php echo $attachment_meta['src']; ?>" alt="<?php echo $attachment_meta['description']; ?>">
                            </a>
                             <div class="carousel-caption hidden-xs">

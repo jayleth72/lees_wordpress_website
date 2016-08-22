@@ -22,27 +22,42 @@
                 <div class='col-sm-4 col-md-3 col-xs-6'>
                     <h4>What is Lee's Art all About</h4>
                     <p><i>Surf, beach and dream inspired art</i></p>
-                    <p><a href='my-story.html'>More...</a></p>
+
+                    <?php
+                         /* get link of contact page */
+                        $page = get_page_by_title( "Lee's Story");
+                    ?> 
+
+                    <p><a href='<?php echo get_page_link($page->ID); ?>'>More...</a></p>
                 </div>
 
                 <div class='col-sm-2 col-xs-6 col-md-offset-1'>
                     <h4>Links</h4>
-                        <ul class='list-unstyled'>
-                            <li><a href='index.html'>Home</a></li>
-                            <li><a href='my-story.html'>Lee's Story</a></li>
-                            <li><a href='virtual-gallery.html'>Gallery</a></li>
-                            <li><a href='contact-me.html'>Contact Lee</a></li>     
-                        </ul>
+                        
+                            <?php
+                            wp_nav_menu( array(
+
+                                'theme_location'   => 'footer',
+                                'container'	       => 'nav',
+                                'menu_class'	   => 'list-unstyled',	
+                            ) );
+		                    ?>  
+                        
                 </div>
 
                 <div class='clearfix visible-xs'></div>
 
                 <div class='col-sm-2 col-xs-6'>
                         <h4>I'm Social</h4>
-                        <ul class='list-unstyled'>
-                        <li><a href='https://twitter.com/lees_Art'>Twitter</a></li>
-                        <li><a href='https://www.facebook.com/linda.l.art/' target="_blank" >Facebook</a></li>
-                        </ul>
+                        
+                        <?php
+                            wp_nav_menu( array(
+
+                                'theme_location'   => 'social',
+                                'container'	       => 'nav',
+                                'menu_class'	   => 'list-unstyled',	
+                            ) );
+		                ?>  
                 </div>
 
                 <div class='col-sm-4 col-md-3 col-md-offset-1 col-xs-6'>
@@ -52,7 +67,7 @@
                             <li><i class='glyphicon glyphicon-envelope'></i> <a href='mailto:#'>linda.letheby@gmail.com</a><li>
                         </ul>
 
-                        <p>OTG Web Solutions &copy; 2016.</p>
+                        <p>OTG Web Solutions &copy; <?php echo date('Y') ?>.</p>
                 </div>
             </div>
         </div>

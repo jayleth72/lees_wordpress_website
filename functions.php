@@ -45,6 +45,8 @@ function lees_art_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'lees_art' ),
+		'footer' => esc_html__( 'Footer', 'lees_art' ),
+		'social' => esc_html__( 'Social', 'lees_art' ),
 	) );
 
 	/*
