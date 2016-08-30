@@ -1,12 +1,7 @@
 <?php
 /**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Lees_Art
+ * @package Bootstrap to WordPress
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,7 +9,7 @@
 		
 		<?php
 		if ( is_single() ) :
-			the_title( '<h2 class="entry-title">', '</h2>' );
+			the_title( '<h3 class="entry-title">', '</h3>' );
 		else :
 			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;
@@ -45,10 +40,9 @@
     		<?php the_post_thumbnail( '', array( 'class' => 'img-responsive' ) ); ?>
          </div><!-- post-image -->
 	<?php } ?>
-   
-
-	<div class="post-excerpt">
-		<?php the_excerpt(); ?>
-	</div><!-- post-excerpt -->
+	
+	<div class="post-body">
+		<?php the_content(); ?>
+	</div><!-- post-body -->
 
 </article><!-- #post-## -->
